@@ -1,0 +1,37 @@
+{
+  "_id": "6650b3a21b8234ef9d2a3347",
+  "invoiceNumber": 1001,
+  "client": {
+    "_id": "6650b36d1b8234ef9d2a3345",
+    "name": "John Doe",
+    "email": "john@example.com"
+  },
+  "issueDate": "2025-05-30T00:00:00.000Z",
+  "dueDate": "2025-06-15T00:00:00.000Z",
+  "items": [
+    {
+      "description": "Website Design",
+      "quantity": 2,
+      "rate": 500,
+      "amount": 1000
+    },
+    {
+      "description": "Hosting (6 months)",
+      "quantity": 1,
+      "rate": 150,
+      "amount": 150
+    }
+  ],
+  "subTotal": 1150,
+  "tax": 115,
+  "total": 1265,
+  "status": "Unpaid",
+  "notes": "Please make payment before the due date.",
+  "createdBy": {
+    "_id": "6650b37e1b8234ef9d2a3346",
+    "name": "Admin User",
+    "email": "admin@example.com"
+  },
+  "createdAt": "2025-05-30T10:00:00.000Z",
+  "updatedAt": "2025-05-30T10:00:00.000Z"
+}
