@@ -6,6 +6,11 @@ import html2canvas from "html2canvas";
 export default function InvoicePreview({ invoice, subTotal, total }) {
   const handleDownload = () => {
     const input = document.getElementById("invoice-view");
+    const button = input.querySelector("button");
+
+    if (button) {
+      button.style.display = "none"; // Hide the button before capturing
+    }
 
     html2canvas(input, { scale: 2 }).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
@@ -19,6 +24,10 @@ export default function InvoicePreview({ invoice, subTotal, total }) {
 
       pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
       pdf.save("invoice.pdf");
+
+      if (button) {
+        button.style.display = "block"; // Show the button again after capturing
+      }
     });
   };
   return (
