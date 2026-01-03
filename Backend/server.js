@@ -12,8 +12,7 @@ app.use(cors());
 
 // Stripe webhook needs raw body; we will mount it on specific route before json parser
 const bodyParser = require("body-parser");
-const { webhookHandler } = require("./routes/paymentRoutes");
-app.post("/api/payments/webhook", bodyParser.raw({ type: "application/json" }), webhookHandler);
+
 
 app.use(express.json());
 
