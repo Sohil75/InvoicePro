@@ -39,12 +39,6 @@ app.use("/api/invoices", invoiceRoutes);
 const dashboardRoutes = require("./routes/dashboard");
 app.use("/api/dashboard", dashboardRoutes);
 
-// Public and payment routes
-const publicRoutes = require("./routes/publicRoutes");
-app.use("/api/public", publicRoutes);
-
-const { paymentRouter } = require("./routes/paymentRoutes");
-app.use("/api/payments", paymentRouter);
 
 // Middleware to serve React app for non-API routes (for SPA client-side routing)
 app.use((req, res, next) => {
