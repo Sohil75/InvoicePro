@@ -115,6 +115,7 @@
   width: 280px;
   margin-left: auto;
   page-break-inside: avoid;
+    border:2px solid red;
 }
 
 .print-totals h2 {
