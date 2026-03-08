@@ -3,6 +3,8 @@
   padding: 40px;
   background: white;
   color: black;
+    box-sizing: border-box;
+  overflow: visible; 
   font-family: Arial, sans-serif;
 }
 .print-header{
@@ -103,7 +105,9 @@
 
 .print-totals {
   margin-top: 30px;
-  text-align: right;
+  width: 280px;
+  margin-left: auto;
+  page-break-inside: avoid;
 }
 
 .print-totals h2 {

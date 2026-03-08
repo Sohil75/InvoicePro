@@ -36,6 +36,8 @@ export default function InvoicePreview({ invoice, subTotal, total,company }) {
         allowTaint: true,
         logging: false,
         letterRendering: true,
+        windowWidth: input.scrollWidth,
+         windowHeight: input.scrollHeight
       });
       
       // Restore original styles
