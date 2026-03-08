@@ -10,37 +10,34 @@ export default function InvoicePreview({ invoice, subTotal, total,company }) {
   const handleDownload = async()=>{
     try {
           const input = document.getElementById(
-            `print-invoice-${invoice._id || invoice.invoiceNumber}`
-           );
-      if (!input) {
-        alert("Invoice element not found");
-        return;
-      }
-      
-      // Make the hidden element visible for rendering
-      const originalVisibility = input.style.visibility;
-      const originalPosition = input.style.position;
-      const originalLeft = input.style.left;
-      
-      input.style.visibility = "visible";
-      input.style.position = "absolute";
-      input.style.left = "-9999px";
-      
-      // Wait a moment for rendering
-     await new Promise((resolve) => setTimeout(resolve, 1000));
+  `print-invoice-${invoice._id || invoice.invoiceNumber}`
+);
 
-      const canvas = await html2canvas(input, {
-        scale: 3,
-        useCORS: true,
-        backgroundColor: "#ffffff",
-        foreignObjectRendering: true
-      });
-      
-      // Restore original styles
-      input.style.visibility = originalVisibility;
-      input.style.position = originalPosition;
-      input.style.left = originalLeft;
-      
+if (!input) {
+  alert("Invoice element not found");
+  return;
+}
+
+/* temporarily show element */
+const originalStyle = input.style.cssText;
+
+input.style.position = "fixed";
+input.style.top = "0";
+input.style.left = "0";
+input.style.zIndex = "9999";
+input.style.opacity = "1";
+
+/* wait for render */
+await new Promise(resolve => setTimeout(resolve, 300));
+
+const canvas = await html2canvas(input, {
+  scale: 3,
+  useCORS: true,
+  backgroundColor: "#ffffff"
+});
+
+/* restore styles */
+input.style.cssText = originalStyle;
       // Check if canvas has valid dimensions
       if (canvas.width === 0 || canvas.height === 0) {
         console.error("Canvas dimensions:", canvas.width, canvas.height);
