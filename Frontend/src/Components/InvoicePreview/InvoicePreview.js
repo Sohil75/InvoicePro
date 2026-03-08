@@ -10,8 +10,8 @@ export default function InvoicePreview({ invoice, subTotal, total,company }) {
   const handleDownload = async()=>{
     try {
         const input = document.getElementById(
-          `print-invoice-${invoice._id || invoice.invoiceNumber}`
-        );
+  `print-invoice-${invoice._id || invoice.invoiceNumber}`
+);
       if (!input) {
         alert("Invoice element not found");
         return;
@@ -27,18 +27,13 @@ export default function InvoicePreview({ invoice, subTotal, total,company }) {
       input.style.left = "-9999px";
       
       // Wait a moment for rendering
-      await new Promise(resolve => setTimeout(resolve, 500));
-      
-      const canvas = await html2canvas(input, {
-        scale: 3,
-        useCORS: true,
-        backgroundColor: "#ffffff",
-        allowTaint: true,
-        logging: false,
-        letterRendering: true,
-        windowWidth: input.scrollWidth,
-         windowHeight: input.scrollHeight
-      });
+     await new Promise((resolve) => setTimeout(resolve, 300));
+
+const canvas = await html2canvas(input, {
+  scale: 3,
+  useCORS: true,
+  backgroundColor: "#ffffff",
+});
       
       // Restore original styles
       input.style.visibility = originalVisibility;
@@ -189,21 +184,24 @@ export default function InvoicePreview({ invoice, subTotal, total,company }) {
       {/* Hidden element for PDF generation */}
       {company && (
         <div
-          id={`pdf-container-${invoice._id || invoice.invoiceNumber}`}
-          style={{
-            position: "fixed",
-            top: "-10000px",
-            left: "-10000px",
-            opacity: 1,
-          }}
-        >
-          <PrintableInvoice
-            invoice={invoice}
-            subTotal={subTotal}
-            total={total}
-            company={company}
-          />
-        </div>
+  id={`pdf-container-${invoice._id || invoice.invoiceNumber}`}
+  style={{
+    position: "fixed",
+    top: "0",
+    left: "0",
+    width: "794px",
+    background: "white",
+    zIndex: "-1",
+    opacity: "0",
+  }}
+>
+  <PrintableInvoice
+    invoice={invoice}
+    subTotal={subTotal}
+    total={total}
+    company={company}
+  />
+</div>
       )}
     </div>
     
