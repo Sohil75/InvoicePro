@@ -33,6 +33,7 @@ export default function InvoicePreview({ invoice, subTotal, total,company }) {
         scale: 3,
         useCORS: true,
         backgroundColor: "#ffffff",
+        foreignObjectRendering: true
       });
       
       // Restore original styles

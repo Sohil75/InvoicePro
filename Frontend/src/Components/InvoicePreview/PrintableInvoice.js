@@ -105,7 +105,7 @@ const taxAmount = safeSubTotal * (invoice.tax || 0) / 100;
         <div className="total-row">
           <div>Subtotal:</div>
           <div>{formatCurrency(safeSubTotal )}</div>
-          <h2 style={{color:"red"}}>{subTotal}</h2>
+
         </div>
         {invoice.tax > 0 && (
           <div className="total-row">
@@ -116,7 +116,7 @@ const taxAmount = safeSubTotal * (invoice.tax || 0) / 100;
         <div className="total-row final-total">
          <div> <strong>Total:</strong></div>
           <div><strong>{formatCurrency(safeTotal)}</strong></div>
-          <h2 style={{color:"blue"}}>{total}</h2>
+
         </div>
       </div>
 
