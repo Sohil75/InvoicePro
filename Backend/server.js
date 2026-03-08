@@ -38,7 +38,7 @@ app.use("/api/invoices", invoiceRoutes);
 const dashboardRoutes = require("./routes/dashboard");
 app.use("/api/dashboard", dashboardRoutes);
  
-app.use("/uploads",express.static("uploads"));
+app.use("/uploads",express.static(path.join(__dirname,"uploads")));
 const companyRoutes = require("./routes/companyRoutes");
 app.use("/api/company-profile",companyRoutes);
 
