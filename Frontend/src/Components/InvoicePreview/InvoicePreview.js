@@ -93,7 +93,7 @@ export default function InvoicePreview({ invoice, subTotal, total,company }) {
     <div className="invoice-view" id="invoice-view">
       <div className="company-brand">
         {company?.logoUrl && (
-          <img src={`http://localhost:5000${company.logoUrl}`} alt="logo" className="company-logo" />
+          <img src={`${process.env.REACT_APP_API_URL}${company.logoUrl}`} alt="logo" className="company-logo" />
         )}
         <div className="company-text">
           <h2>{company?.companyName || "Company Name"}</h2>
