@@ -1,0 +1,20 @@
+/* ===== GLOBAL RESET ===== */
+
+html,
+body,
+#root {
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+
+  background: radial-gradient(
+    circle at 20% 40%,
+    #1a1a4f 0%,
+    #0c0c2d 60%,
+    #07071a 100%
+  );
+  scroll-behavior: smooth;
+    animation: pageFade 0.5s ease;
+  overflow-x: hidden;
+}

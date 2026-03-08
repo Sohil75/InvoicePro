@@ -1,0 +1,15 @@
+.mark-paid-btn {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #22c55e;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.mark-paid-btn:hover {
+  background: #16a34a;
+}

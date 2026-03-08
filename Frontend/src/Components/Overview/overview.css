@@ -1,0 +1,101 @@
+.overview-container {
+  padding: 24px;
+  color: #e2e8f0;
+}
+
+.page-title {
+  font-size: 26px;
+  margin-bottom: 24px;
+}
+
+/* ===== Glass Effect ===== */
+.glass {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 16px;
+}
+
+/* ===== Stats Grid ===== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.stat-card {
+  padding: 20px;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.growth {
+  font-size: 13px;
+  margin-top: 6px;
+  display: block;
+}
+
+.growth.up {
+  color: #22c55e;
+}
+
+.growth.down {
+  color: #ef4444;
+}
+
+.danger {
+  color: #ef4444;
+}
+
+/* ===== Chart ===== */
+.chart-card {
+  padding: 24px;
+  margin-bottom: 28px;
+}
+
+/* ===== Clients ===== */
+.clients-card {
+  padding: 24px;
+}
+
+.client-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #7c3aed, #6366f1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.badge {
+  font-size: 12px;
+  background: rgba(124, 58, 237, 0.2);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.empty {
+  opacity: 0.7;
+}

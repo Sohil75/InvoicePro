@@ -1,0 +1,367 @@
+
+.dashboard-container {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  background: linear-gradient(
+  circle at 20% 40%,
+  #1a1a4f 0%,
+  #0c0c2d 60%,
+  #07071a 100%
+);
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+  width: 250px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+
+  position: relative;
+  transition: left 0.3s ease;
+}
+
+/* Sidebar header */
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Hide close button by default */
+.close-btn {
+  display: none;
+}
+
+/* ================= BRAND ================= */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.brand-logo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+.brand-name {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* ================= NAV ================= */
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #cbd5f5;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  background: rgba(95, 111, 255, 0.15);
+  color: white;
+}
+
+.nav-links a.active {
+  background: linear-gradient(90deg, #030f78, #5214e1);
+  color: white;
+  box-shadow: 0 0 20px rgba(127, 140, 255, 0.6);
+}
+.nav-links a svg{
+  transition: transform 0.3s ease,color 0.3s ease;
+}
+.nav-links a.active svg {
+  transform: translateX(5px) scale(1.2);
+    filter: drop-shadow(0 0 8px rgba(127, 140, 255, 0.8));
+}
+.nav-links a:hover svg {
+  transform: translateX(3px);
+}
+
+
+/* ================= MAIN CONTENT ================= */
+
+.main-content {
+  flex: 1;
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  min-width: 0;
+  overflow-y: auto;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= TOPBAR ================= */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  padding: 15px 25px;
+  border-radius: 15px;
+
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+/* ================= SEARCH ================= */
+
+.search-bar {
+  flex: 1;
+  max-width: 200px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px 3px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  color: white;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.search-bar input:focus {
+  border-color: #5f6fff;
+  box-shadow: 0 0 10px rgba(95,111,255,0.6);
+}
+
+/* ================= ICON BUTTON ================= */
+
+.icon-button {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+  flex-shrink: 0;
+}
+
+.icon-button:hover {
+  background: linear-gradient(90deg, #5f6fff, #8f5fff);
+  box-shadow: 0 0 15px rgba(127,140,255,0.6);
+}
+
+/* ================= AVATAR ================= */
+
+.avatar-wrapper {
+  position: relative;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #5f6fff, #8f5fff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.1);
+}
+
+/* ================= DROPDOWN ================= */
+
+.dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  min-width: 120px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(15px);
+  border-radius: 12px;
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.dropdown button{
+  padding: 7px 25px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #000096, #100034);
+  color: aliceblue;
+  cursor: pointer;
+  border: none;
+}
+.dropdown button:hover{
+  background: #5214e1;
+  color: white;
+  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
+}
+
+/* ================= MENU TOGGLE ================= */
+
+.menu-toggle {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ================= OVERLAY ================= */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+
+/* ================= TABLET & MOBILE ================= */
+
+@media (max-width: 900px) {
+
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: -260px;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 1000;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .close-btn {
+    display: block;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .topbar {
+    flex-wrap: wrap;
+  }
+
+  .search-bar {
+    max-width: 100%;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 768px) {
+
+  .topbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .topbar-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .search-bar {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .main-content {
+    padding: 15px;
+  }
+
+  .search-bar input {
+    font-size: 14px;
+  }
+
+  .icon-button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .brand-name {
+    font-size: 18px;
+  }
+}

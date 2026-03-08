@@ -1,0 +1,73 @@
+.company-setup-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #1e1b4b, #020617);
+  padding: 20px;
+  font-family: "Inter", sans-serif;
+}
+
+.company-card {
+  width: 420px;
+  padding: 35px;
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  color: #e2e8f0;
+}
+
+.company-card h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.company-card input {
+  width: 100%;
+  padding: 11px 14px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(148,163,184,0.2);
+  background: rgba(15,23,42,0.6);
+  color: #e2e8f0;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.company-card input::placeholder {
+  color: #94a3b8;
+}
+
+.company-card input:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 1px #7c3aed;
+}
+
+.company-card input[type="file"] {
+  padding: 8px;
+  background: transparent;
+}
+
+.company-card button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  background: linear-gradient(135deg,#7c3aed,#6366f1);
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.company-card button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(124,58,237,0.35);
+}

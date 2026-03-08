@@ -1,0 +1,149 @@
+.print-invoice {
+  width: 794px; /* A4 width in px approx */
+  padding: 40px;
+  background: white;
+  color: black;
+  font-family: Arial, sans-serif;
+}
+.print-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  border-bottom:2px solid #eee;
+  padding-bottom:20px;
+  margin-bottom:30px;
+}
+
+.company-logo{
+  width:70px;
+  margin-bottom:10px;
+}
+.invoice-title{
+  text-align:center;
+}
+
+.invoice-title h1{
+  font-size:28px;
+  letter-spacing:2px;
+}
+
+.invoice-meta{
+  text-align:right;
+  font-size:14px;
+}
+
+.print-table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:30px;
+}
+
+.print-table th{
+  background:#f5f5f5;
+  padding:10px;
+  text-align:left;
+}
+
+.print-table td{
+  padding:10px;
+  border-bottom:1px solid #eee;
+}
+
+.print-totals{
+  margin-top:25px;
+  width:300px;
+  margin-left:auto;
+}
+
+.final-total{
+  font-size:18px;
+  border-top:2px solid #333;
+  padding-top:10px;
+}
+.print-company {
+  text-align: left;
+}
+.invoice-center {
+  text-align: center;
+}
+
+.invoice-center h1 {
+  margin: 0;
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+
+.invoice-number {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* RIGHT — meta */
+.invoice-meta {
+  text-align: right;
+  font-size: 14px;
+}
+.print-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.print-table th,
+.print-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.print-table th {
+  background: #f5f5f5;
+}
+
+.print-totals {
+  margin-top: 30px;
+  text-align: right;
+}
+
+.print-totals h2 {
+  margin-top: 10px;
+}
+
+.print-notes {
+  margin-top: 30px;
+}
+.invoice-title-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.invoice-center {
+  text-align: center;
+  align-items: center;
+}
+
+.invoice-center h1 {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+.invoice-number {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #444;
+}
+
+.invoice-meta {
+  text-align: right;
+  font-size: 14px;
+}
+.final-total {
+  font-size: 20px;
+  border-top: 2px solid #111;
+  padding-top: 8px;
+  margin-top: 6px;
+}
