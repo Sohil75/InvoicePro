@@ -27,7 +27,7 @@ export default function InvoicePreview({ invoice, subTotal, total,company }) {
       input.style.left = "-9999px";
       
       // Wait a moment for rendering
-     await new Promise((resolve) => setTimeout(resolve, 300));
+     await new Promise((resolve) => setTimeout(resolve, 1000));
 
 const canvas = await html2canvas(input, {
   scale: 3,
