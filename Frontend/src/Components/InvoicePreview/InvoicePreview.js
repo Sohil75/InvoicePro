@@ -30,7 +30,7 @@ export default function InvoicePreview({ invoice, subTotal, total,company }) {
       await new Promise(resolve => setTimeout(resolve, 500));
       
       const canvas = await html2canvas(input, {
-        scale: 2,
+        scale: 3,
         useCORS: true,
         backgroundColor: "#ffffff",
         allowTaint: true,
@@ -188,9 +188,22 @@ export default function InvoicePreview({ invoice, subTotal, total,company }) {
       
       {/* Hidden element for PDF generation */}
       {company && (
-      <div style={{ visibility: "hidden", position: "absolute", left: "-9999px" }}>
-        <PrintableInvoice invoice={invoice} subTotal={subTotal} total={total} company={company} />
-      </div>
+        <div
+          id={`pdf-container-${invoice._id || invoice.invoiceNumber}`}
+          style={{
+            position: "fixed",
+            top: "-10000px",
+            left: "-10000px",
+            opacity: 1,
+          }}
+        >
+          <PrintableInvoice
+            invoice={invoice}
+            subTotal={subTotal}
+            total={total}
+            company={company}
+          />
+        </div>
       )}
     </div>
     
