@@ -111,7 +111,7 @@ export default function PrintableInvoice({ invoice, subTotal, total, company }) 
         )}
         <div className="total-row final-total">
           <strong>Total:</strong>
-          <strong>{formatCurrency(total)}</strong>
+          <strong>{formatCurrency(total ?? invoice.total)}</strong>
         </div>
       </div>
 
