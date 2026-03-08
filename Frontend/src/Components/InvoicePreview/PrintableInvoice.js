@@ -23,7 +23,10 @@ export default function PrintableInvoice({ invoice, subTotal, total, company }) 
     }).format(amount || 0);
   };
 
-  const taxAmount = subTotal * (invoice.tax || 0) / 100;
+const safeSubTotal = subTotal ?? invoice.subTotal ?? 0;
+const safeTotal = total ?? invoice.total ?? 0;
+
+const taxAmount = safeSubTotal * (invoice.tax || 0) / 100;
 
   return (
 <div
@@ -101,7 +104,7 @@ export default function PrintableInvoice({ invoice, subTotal, total, company }) 
       <div className="print-totals">
         <div className="total-row">
           <span>Subtotal:</span>
-          <span>{formatCurrency(subTotal ?? invoice.subTotal )}</span>
+          <span>{formatCurrency(safeSubTotal )}</span>
         </div>
         {invoice.tax > 0 && (
           <div className="total-row">
@@ -111,7 +114,7 @@ export default function PrintableInvoice({ invoice, subTotal, total, company }) 
         )}
         <div className="total-row final-total">
           <strong>Total:</strong>
-          <strong>{formatCurrency(total ?? invoice.total)}</strong>
+          <strong>{formatCurrency(safeTotal)}</strong>
         </div>
       </div>
 
