@@ -160,3 +160,7 @@
   margin-top: 6px;
   color: #111;
 }
+.print-invoice,
+.print-invoice * {
+  color: #000 !important;
+}
